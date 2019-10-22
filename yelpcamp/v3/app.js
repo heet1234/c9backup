@@ -5,18 +5,13 @@ var express     = require("express"),
     Campground  = require("./models/campground"),
     seedDB      = require("./seeds"),
     Comment     = require("./models/comment");    
-    
-seedDB();    
+       
 mongoose.connect("mongodb://localhost/yelp_camp_v3", { useNewUrlParser: true });
-
-app.use(express.static(__dirname + '/public'));
-
 app.use(bodyParser.urlencoded({extended: true}));
-
 app.set("view engine", "ejs");
 
-
-
+seedDB(); 
+app.use(express.static(__dirname + '/public'));
 
 
 // Campground.create(
