@@ -6,7 +6,7 @@ var express     = require("express"),
     seedDB      = require("./seeds"),
     Comment     = require("./models/comment");    
        
-mongoose.connect("mongodb://localhost/yelp_camp_v3", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/yelp_camp_v3", { useNewUrlParser: true, useUnifiedTopology: true });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
